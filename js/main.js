@@ -5,24 +5,32 @@ window.addEventListener("load", () => {
 
   commands.forEach((command) => {
     command.addEventListener("click", (e) => {
-      ToggleExtra(e.target);
+      ToggleCommand(e.target);
     });
   });
 
-  function ToggleExtra(command) {
+  window.addEventListener("click", (e) => {
+    if (!e.target.classList.contains("command")) CloseAll();
+  });
+
+  function ToggleCommand(command) {
     // console.log(command);
     let alreadyOpen = false;
 
     if (command.classList.contains("expanded")) alreadyOpen = true;
 
-    // close all commands
-    commands.forEach((command) => {
-      command.classList.remove("expanded");
-    });
+    CloseAll();
 
     // open command
     if (!alreadyOpen && !command.classList.contains("expanded")) {
       command.classList.add("expanded");
     }
+  }
+
+  function CloseAll() {
+    // close all commands
+    commands.forEach((command) => {
+      command.classList.remove("expanded");
+    });
   }
 });
