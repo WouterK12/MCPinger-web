@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MCPinger</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <main>
+      <img src="img/avatar.png" alt="MCPinger" class="logo" />
+      <span class="title">MCPinger</span>
+
+      <article>
+        <section class="info">
+          <p>
+            MCPinger is used to view the status of any Minecraft server. It
+            shows the MOTD, player count, version and software.
+          </p>
+          <p>
+            You may also view any Minecraft user's skin or UUID, create custom
+            advancements and track the status of a server.
+          </p>
+          <p>Take a look at the commands below:</p>
+        </section>
+        <span class="title">Commands</span>
+        <section class="commands">
+          <div class="command">
+            <p class="com">mc.ip &lt;hostname&gt;</p>
+            <span class="desc">
+              Set the default Minecraft server. (Admin-only)
+            </span>
+            <div class="extra">
+              <hr />
+              <p class="title">Aliases</p>
+              <div class="aliases">
+                <span>mc.<span class="highlight">a</span></span> |
+                <span>mc.<span class="highlight">be</span></span> |
+                <span>mc.<span class="highlight">test</span></span>
+              </div>
+              <p class="title">Example</p>
+              <div class="example">
+                <span>mc.ip hypixel.net</span>
+              </div>
+            </div>
+          </div>
+          <div class="command">
+            <p class="com">mc.ping</p>
+            <span class="desc">Ping the default Minecraft server.</span>
+          </div>
+          <div class="command">
+            <p class="com">mc.ping &lt;hostname&gt;</p>
+            <span class="desc">
+              Ping any Minecraft server by it's IP address.
+            </span>
+          </div>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
