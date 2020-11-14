@@ -20,7 +20,7 @@ html {
   min-width: 100%;
 
   color: var(--white);
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   background: var(--dark);
 }
 
@@ -36,7 +36,7 @@ a:hover {
 }
 hr {
   border: none;
-  height: 0.5px;
+  height: 1px;
   color: var(--greyple);
   background: var(--greyple);
 }
@@ -92,19 +92,24 @@ article .buttons {
 }
 article .buttons .button {
   margin-right: 10px;
-  padding: 10px 15px;
-
-  /* color: var(--darker); */
+  padding: 7px 15px;
 
   border-radius: 10px;
-  border: 1px solid var(--primary);
+  border: 2px solid var(--dark);
+  border-left: 2px solid var(--primary);
+  background: var(--dark);
+
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Catamaran", sans-serif;
+  text-transform: uppercase;
 
   transition: box-shadow 0.25s;
 }
 article .buttons .button:hover {
   text-decoration: none;
 
-  border: 1px solid var(--darker);
+  border: 2px solid var(--darker);
   background: var(--buttons);
 
   box-shadow: 0 5px 20px var(--buttons);
@@ -124,16 +129,16 @@ article section.commands .command {
   margin: 5px 0px;
   padding: 10px;
   border-radius: 10px;
-  border: 1px solid var(--darker);
+  border: 2px solid var(--darker);
 
   background: var(--dark);
   cursor: pointer;
 }
 article section.commands .command:hover {
-  border: 1px solid var(--primary);
+  border: 2px solid var(--primary);
 }
 article section.commands .command.expanded {
-  border: 1px solid var(--primary);
+  border: 2px solid var(--primary);
 }
 article section.commands .command * {
   pointer-events: none;
@@ -144,7 +149,7 @@ article section.commands .command .com {
   margin: 10px 0px;
 
   color: var(--primary);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   font-family: monospace;
 
@@ -184,4 +189,6 @@ footer {
 
   padding: 10px;
   margin-top: 15px;
+
+  background: var(--darker);
 }
