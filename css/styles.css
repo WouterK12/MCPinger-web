@@ -3,6 +3,8 @@
   --greyple: #99aab5;
   --dark: #2c2f33;
   --darker: #23272a;
+  --primary: rgb(189, 124, 243);
+  --white: rgb(241, 241, 241);
 }
 
 *,
@@ -16,13 +18,19 @@ html {
   min-height: 100%;
   min-width: 100%;
 
-  color: #fff;
+  color: var(--white);
   font-family: "Roboto", sans-serif;
   background: var(--dark);
 }
 
 body {
   margin: 0;
+}
+hr {
+  border: none;
+  height: 0.5px;
+  color: var(--greyple);
+  background: var(--greyple);
 }
 
 /* main */
@@ -37,7 +45,7 @@ main .logo {
 main .title {
   font-size: 40px;
   font-weight: bold;
-  font-family: monospace;
+  font-family: "Catamaran", sans-serif;
 }
 main article .title {
   font-size: 30px;
@@ -63,6 +71,10 @@ article section.commands .command {
   border-radius: 10px;
 
   background: var(--dark);
+  cursor: pointer;
+}
+article section.commands .command.expanded {
+  border: 1px solid var(--primary);
 }
 article section.commands .command * {
   pointer-events: none;
@@ -72,17 +84,23 @@ article section.commands .command .com {
 
   margin: 10px 0px;
 
-  font-size: 17px;
+  color: var(--primary);
+  font-size: 18px;
+  font-weight: bold;
   font-family: monospace;
 
-  background: var(--darker);
+  /* background: var(--darker); */
 }
 /* extra */
 article section.commands .command .extra {
-  /* background: #000; */
+  overflow: hidden;
+  max-height: 0;
+
+  transition: max-height 0.25s;
 }
-article section.commands .command .extra.hidden {
-  display: none;
+article section.commands .command.expanded .extra {
+  max-height: 300px;
+  transition: max-height 0.25s ease-in-out;
 }
 article section.commands .command .extra .title {
   font-size: 14px;
@@ -92,5 +110,10 @@ article section.commands .command .extra div span {
   background: var(--darker);
 }
 article section.commands .command .extra div span.highlight {
-  color: rgb(156, 102, 201);
+  color: var(--primary);
+}
+article section.commands .command .extra .example span {
+  display: block;
+  width: fit-content;
+  margin: 5px 0px;
 }

@@ -8,23 +8,21 @@ window.addEventListener("load", () => {
       ToggleExtra(e.target);
     });
   });
-});
 
-function ToggleExtra(command) {
-  // console.log(command.lastElementChild);
+  function ToggleExtra(command) {
+    // console.log(command);
+    let alreadyOpen = false;
 
-  // close all extra's
-  commands.forEach((command) => {
-    command.lastElementChild.classList.add("hidden");
-  });
+    if (command.classList.contains("expanded")) alreadyOpen = true;
 
-  // open command extra
-  let extra = command.lastElementChild;
-  if (extra.classList.contains("hidden")) {
-    // show extra
-    extra.classList.remove("hidden");
-  } else {
-    // hide extra
-    extra.classList.add("hidden");
+    // close all commands
+    commands.forEach((command) => {
+      command.classList.remove("expanded");
+    });
+
+    // open command
+    if (!alreadyOpen && !command.classList.contains("expanded")) {
+      command.classList.add("expanded");
+    }
   }
-}
+});
