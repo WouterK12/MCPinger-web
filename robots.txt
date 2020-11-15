@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /README.md
+Disallow: /thank-you.html
+Disallow: /img/thank-you/
