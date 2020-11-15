@@ -24,6 +24,9 @@ html {
   font-family: "Open Sans", sans-serif;
   background: var(--dark);
 }
+html.clean {
+  background: var(--darker);
+}
 body {
   margin: 0;
 }
@@ -91,6 +94,9 @@ main article .title {
 main article > .title {
   display: block;
   padding: 10px 0px;
+}
+main .slogan {
+  margin-bottom: 10px;
 }
 
 /* back */
@@ -162,6 +168,14 @@ article .buttons .button:hover {
 a.back:hover {
   text-decoration: none;
   border: 2px solid var(--primary);
+}
+
+/* preview */
+article .preview {
+  display: flex;
+  justify-content: center;
+
+  margin: 15px;
 }
 
 /* info */

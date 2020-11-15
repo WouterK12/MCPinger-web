@@ -39,12 +39,11 @@ window.addEventListener("load", async () => {
 
   // index
   let factIndex = parseInt(localStorage.getItem("fact"));
-  // const fact = Object.values(facts)[factIndex];
-  const fact = Object.values(facts)[4];
+  const fact = Object.values(facts)[factIndex];
 
   // image
   const imgContainer = document.querySelector(".logo");
-  imgContainer.src = `img/thank-you/${Object.keys(facts)[3]}.jpg`;
+  imgContainer.src = `img/thank-you/${Object.keys(facts)[factIndex]}.jpg`;
 
   // save next factIndex
   factIndex++;
