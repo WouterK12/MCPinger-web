@@ -220,6 +220,9 @@ article section.commands .command.expanded .extra {
   max-height: 300px;
   transition: max-height 0.25s ease-in-out;
 }
+article section.commands .command .extra > span {
+  display: block;
+}
 article section.commands .command .extra .title {
   margin-bottom: 0;
 

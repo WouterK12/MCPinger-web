@@ -162,9 +162,16 @@
             </span>
             <div class="extra">
               <hr />
+              <span>A check is performed every <b>30</b> minutes.</span>
               <span>
-                Check every <b>30</b> minutes. Notify if the status has changed.
+                If the status has changed, a notification is send in the channel
+                in which the tracker was enabled.
               </span>
+              <span>
+                The tracker will disable after <b>100</b> failed checks, when
+                the server is offline.
+              </span>
+              <span>(That's 2 days and 2 hours)</span>
               <p class="title">Aliases</p>
               <div class="aliases">
                 <span>mc.<span class="highlight">t</span></span> |
