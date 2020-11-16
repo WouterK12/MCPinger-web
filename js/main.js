@@ -4,24 +4,30 @@ window.addEventListener("load", () => {
   );
 
   commands.forEach((command) => {
-    command.addEventListener("click", (e) => {
-      ToggleCommand(e.target);
+    command.addEventListener("mouseup", (e) => {
+      // check if user selected something (example)
+      // or if command is already expanded
+      if (
+        !getSelection().toString() ||
+        !e.target.classList.contains("expanded")
+      ) {
+        ToggleCommand(e.target);
+      }
     });
   });
 
-  window.addEventListener("click", (e) => {
+  window.addEventListener("mouseup", (e) => {
     if (!e.target.classList.contains("command")) CloseAll();
   });
 
   function ToggleCommand(command) {
-    // console.log(command);
     let alreadyOpen = false;
 
     if (command.classList.contains("expanded")) alreadyOpen = true;
 
     CloseAll();
 
-    // open command
+    // expand command
     if (!alreadyOpen && !command.classList.contains("expanded")) {
       command.classList.add("expanded");
     }
