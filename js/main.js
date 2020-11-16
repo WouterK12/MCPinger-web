@@ -33,15 +33,4 @@ window.addEventListener("load", () => {
       command.classList.remove("expanded");
     });
   }
-
-  // widget images
-  // (if image can't be loaded)
-  const top = document.getElementById("top.gg");
-  const botsfordiscord = document.getElementById("botsfordiscord");
-  top.addEventListener("error", () => {
-    top.style.display = "none";
-  });
-  botsfordiscord.addEventListener("error", () => {
-    top.style.display = "none";
-  });
 });

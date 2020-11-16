@@ -3,12 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Primary Meta Tags -->
+    <title>MCPinger</title>
+    <meta name="title" content="MCPinger" />
     <meta
       name="description"
-      content="MCPinger is a Discord bot, used to view the status of any Minecraft
-    server. It shows the MOTD, player count, version, software and icon."
+      content="MCPinger is a Discord bot, used to view the status of any Minecraft server. It shows the MOTD, player count, version, software and icon."
+    />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mcpinger.wouterk12.com/" />
+    <meta property="og:title" content="MCPinger" />
+    <meta
+      property="og:description"
+      content="MCPinger is a Discord bot, used to view the status of any Minecraft server. It shows the MOTD, player count, version, software and icon."
+    />
+    <meta
+      property="og:image"
+      content="https://mcpinger.wouterk12.com/img/banner.png"
+    />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://mcpinger.wouterk12.com/" />
+    <meta property="twitter:title" content="MCPinger" />
+    <meta
+      property="twitter:description"
+      content="MCPinger is a Discord bot, used to view the status of any Minecraft server. It shows the MOTD, player count, version, software and icon."
+    />
+    <meta
+      property="twitter:image"
+      content="https://mcpinger.wouterk12.com/img/banner.png"
     />
     <meta name="google" content="nositelinkssearchbox" />
+    <!-- General -->
     <title>MCPinger</title>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -230,7 +257,7 @@
             <a href="https://top.gg/bot/743019909474418800">
               <img
                 src="https://top.gg/api/widget/743019909474418800.svg"
-                id="top.gg"
+                onerror="this.style.display='none'"
               />
             </a>
             <a
@@ -239,7 +266,7 @@
             >
               <img
                 src="https://botsfordiscord.com/api/bot/743019909474418800/widget?theme=dark"
-                id="botsfordiscord"
+                onerror="this.style.display='none'"
               />
             </a>
           </div>
