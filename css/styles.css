@@ -304,3 +304,17 @@ footer {
 
   background: var(--darker);
 }
+footer .copyright {
+  display: none;
+  position: absolute;
+  left: 0;
+
+  margin-left: 10px;
+
+  color: rgb(95, 95, 95);
+}
+@media (min-width: 790px) {
+  footer .copyright {
+    display: block;
+  }
+}
