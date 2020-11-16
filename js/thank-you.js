@@ -31,14 +31,15 @@ window.addEventListener("load", async () => {
   };
 
   // first time
-  if (!localStorage.getItem("fact"))
+  if (!localStorage.getItem("fact")) {
     localStorage.setItem(
       "fact",
-      Math.floor(Math.random * Object.keys(facts).length)
+      Math.floor(Math.random() * Object.keys(facts).length)
     );
+  }
 
   // index
-  let factIndex = parseInt(localStorage.getItem("fact"));
+  let factIndex = localStorage.getItem("fact");
   const fact = Object.values(facts)[factIndex];
 
   // image

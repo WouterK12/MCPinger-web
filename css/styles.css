@@ -175,7 +175,15 @@ article .preview {
   display: flex;
   justify-content: center;
 
-  margin: 15px;
+  margin-top: 15px;
+}
+article .preview img {
+  width: 100%;
+}
+@media (min-width: 560px) {
+  article .preview img {
+    width: unset;
+  }
 }
 
 /* info */
