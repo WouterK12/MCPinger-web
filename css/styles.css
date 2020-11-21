@@ -198,10 +198,48 @@ article .info .fact {
   border-left: 2px solid var(--primary);
 }
 
+/* search */
+article .search {
+  display: flex;
+  align-items: center;
+}
+article .search .icon {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+
+  /* padding: 10px; */
+  margin-left: 10px;
+}
+article .search input {
+  width: 100%;
+
+  margin: 5px 0px;
+  padding: 10px;
+
+  border-radius: 10px;
+  border: 2px solid var(--darker);
+  background: var(--dark);
+
+  color: var(--white);
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+article .search input:hover,
+article .search input:focus {
+  outline: none;
+  border: 2px solid var(--primary);
+}
+
 /* commands */
 article section.commands {
   display: flex;
   flex-direction: column;
+
+  transition: opacity 0.25s;
+}
+article section.commands.hidden {
+  opacity: 0;
 }
 article section.commands .command {
   margin: 5px 0px;
