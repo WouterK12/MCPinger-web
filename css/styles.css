@@ -200,16 +200,9 @@ article .info .fact {
 
 /* search */
 article .search {
+  position: relative;
   display: flex;
   align-items: center;
-}
-article .search .icon {
-  position: absolute;
-  height: 25px;
-  width: 25px;
-
-  /* padding: 10px; */
-  margin-left: 10px;
 }
 article .search input {
   width: 100%;
@@ -229,6 +222,15 @@ article .search input:hover,
 article .search input:focus {
   outline: none;
   border: 2px solid var(--primary);
+}
+/* reset */
+article .search .reset {
+  display: none;
+  position: absolute;
+  right: 0;
+  padding: 10px;
+
+  cursor: pointer;
 }
 
 /* commands */

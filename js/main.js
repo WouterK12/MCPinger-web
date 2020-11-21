@@ -42,10 +42,20 @@ window.addEventListener("load", () => {
 
   // search bar
   const commandsContainer = document.querySelector("article section.commands");
+
   const searchInput = document.getElementById("searchInput");
+  const resetButton = document.querySelector("article .search .reset");
   let typing;
 
-  searchInput.addEventListener("keyup", () => {
+  searchInput.addEventListener("keyup", GetInput);
+
+  // reset search
+  resetButton.addEventListener("mouseup", () => {
+    searchInput.value = "";
+    GetInput();
+  });
+
+  function GetInput() {
     // user is typing
     clearTimeout(typing);
 
@@ -54,16 +64,23 @@ window.addEventListener("load", () => {
 
     // after time, show results
     typing = setTimeout(() => {
-      // search using input
+      // get user input and show resetButton
       const filter = searchInput.value.toLowerCase();
-      GetInput(filter);
+      if (filter) {
+        resetButton.style.display = "block";
+      } else {
+        resetButton.style.display = "";
+      }
+
+      // search using input
+      SearchForCommand(filter);
 
       // show commands
       commandsContainer.classList.remove("hidden");
     }, 500);
-  });
+  }
 
-  function GetInput(filter) {
+  function SearchForCommand(filter) {
     let results = [];
 
     // for every command
