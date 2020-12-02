@@ -16,10 +16,16 @@ window.addEventListener("load", () => {
     });
   });
 
+  // on any click
   window.addEventListener("mouseup", (e) => {
-    if (!e.target.classList.contains("command")) CloseAll();
+    // if not on command
+    if (!e.target.classList.contains("command")) {
+      CloseAll();
+      ClearSearch();
+    }
   });
 
+  // expand or close a command
   function ToggleCommand(command) {
     let alreadyOpen = false;
 
@@ -33,8 +39,8 @@ window.addEventListener("load", () => {
     }
   }
 
+  // close all commands
   function CloseAll() {
-    // close all commands
     commands.forEach((command) => {
       command.classList.remove("expanded");
     });
@@ -49,11 +55,17 @@ window.addEventListener("load", () => {
 
   searchInput.addEventListener("keyup", GetInput);
 
-  // reset search
   resetButton.addEventListener("mouseup", () => {
-    searchInput.value = "";
-    GetInput();
+    ClearSearch();
   });
+
+  // reset search
+  function ClearSearch() {
+    if (searchInput.value) {
+      searchInput.value = "";
+      GetInput();
+    }
+  }
 
   function GetInput() {
     // user is typing
@@ -97,6 +109,15 @@ window.addEventListener("load", () => {
       }
     }
 
+    // hide not found
+    const notFound = commands.length - 1;
+    commands[notFound].style.display = "none";
+
+    // if there are no results and commands are hidden
+    if (!results.lenght && commands[0].style.display) {
+      // show not found
+      commands[notFound].style.display = "";
+    }
     // if there is only one result
     if (results.length == 1) {
       results[0].classList.add("expanded");

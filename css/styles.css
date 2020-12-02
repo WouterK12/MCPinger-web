@@ -303,6 +303,10 @@ article section.commands .command .extra .example span {
 article section.commands .command .extra div span.highlight {
   color: var(--primary);
 }
+/* hidden (notfound) */
+article section.commands .command.hidden {
+  display: none;
+}
 
 /* vote */
 article section.vote {
