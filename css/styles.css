@@ -279,7 +279,7 @@ article section.commands .command .extra {
   transition: max-height 0.25s;
 }
 article section.commands .command.expanded .extra {
-  max-height: 300px;
+  max-height: 450px;
   transition: max-height 0.25s ease-in-out;
 }
 article section.commands .command .extra > span {

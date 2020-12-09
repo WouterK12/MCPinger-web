@@ -21,7 +21,7 @@ window.addEventListener("load", () => {
     // if not on command
     if (!e.target.classList.contains("command")) {
       CloseAll();
-      ClearSearch();
+      // ClearSearch();
     }
   });
 
