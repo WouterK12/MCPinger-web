@@ -113,8 +113,8 @@ window.addEventListener("load", () => {
     const notFound = commands.length - 1;
     commands[notFound].style.display = "none";
 
-    // if there are no results and commands are hidden
-    if (!results.lenght && commands[0].style.display) {
+    // if there are no results
+    if (!results.length) {
       // show not found
       commands[notFound].style.display = "";
     }
@@ -127,4 +127,11 @@ window.addEventListener("load", () => {
       CloseAll();
     }
   }
+
+  // perma links
+  // const hash = window.location.hash.substring(1);
+  // if (hash) {
+  //   searchInput.value = hash;
+  //   GetInput();
+  // }
 });
