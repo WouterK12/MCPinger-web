@@ -68,14 +68,15 @@ main {
 }
 main .logo {
   width: 300px;
+  transform: translateY(7%);
   animation: hoverAnim 3s infinite;
 }
 @keyframes hoverAnim {
   0% {
-    transform: translateY(0%);
+    transform: translateY(7%);
   }
   50% {
-    transform: translateY(2%);
+    transform: translateY(9%);
   }
 }
 main .logo.thank-you {
@@ -279,7 +280,7 @@ article section.commands .command .extra {
   transition: max-height 0.25s;
 }
 article section.commands .command.expanded .extra {
-  max-height: 450px;
+  max-height: 800px;
   transition: max-height 0.25s ease-in-out;
 }
 article section.commands .command .extra > span {
@@ -302,6 +303,10 @@ article section.commands .command .extra .example span {
 }
 article section.commands .command .extra div span.highlight {
   color: var(--primary);
+}
+article section.commands .command .extra img {
+  width: 100%;
+  padding: 10px 0;
 }
 /* hidden (notfound) */
 article section.commands .command.hidden {

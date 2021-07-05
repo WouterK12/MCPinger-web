@@ -56,7 +56,7 @@
       <article>
         <div class="buttons">
           <a
-            href="https://discord.com/oauth2/authorize?client_id=743019909474418800&permissions=18432&scope=bot"
+            href="https://discord.com/api/oauth2/authorize?client_id=743019909474418800&permissions=2147502096&scope=bot"
             target="_blank"
             class="button"
           >
@@ -228,20 +228,27 @@
           </div>
           <div class="command">
             <p class="com">
-              mc.tracker &lt;enable/disable&gt; &lt;hostname&gt;
+              mc.tracker &lt;log/embed/voice&gt; &lt;hostname&gt;
             </p>
             <span class="desc">
               Track the status of any Minecraft server. (Admin-only)
             </span>
             <div class="extra">
               <hr />
-              <span>A check is performed every <b>30</b> minutes.</span>
+              <span>A check is performed every <b>15</b> minutes.</span>
+              <p class="title">Types</p>
+              <div class="aliases">
+                <span class="highlight">Log</span> the status, view it in an
+                <span class="highlight">auto-updating embed</span> or in the
+                <span class="highlight">name of a voice channel</span>.
+              </div>
+              <img
+                src="img/tracker.gif"
+                alt="Examples of tracker types: log, embed and voice"
+              />
               <span>
-                If the status has changed, a notification is send in the channel
-                in which the tracker was enabled.
-              </span>
-              <span>
-                The tracker will disable after <b>100</b> failed checks, when
+                <br />
+                The tracker will disable after <b>200</b> failed checks, when
                 the server is offline.
               </span>
               <span>(That's 2 days and 2 hours)</span>
@@ -257,8 +264,9 @@
               <p class="title">Example</p>
               <div class="example">
                 <span>mc.tracker</span>
-                <span>mc.tracker enable hypixel.net</span>
-                <span>mc.tracker enable play.nethergames.org --bedrock</span>
+                <span>mc.tracker help</span>
+                <span>mc.tracker log hypixel.net</span>
+                <span>mc.tracker embed play.nethergames.org --bedrock</span>
               </div>
             </div>
           </div>
@@ -319,7 +327,8 @@
               </div>
             </div>
           </div>
-          <div class="command">
+          <!-- Temporary disabled, thanks for your feedback! -->
+          <!-- <div class="command">
             <p class="com">mc.suggest &lt;suggestion&gt;</p>
             <span class="desc">Suggest a new feature.</span>
             <div class="extra">
@@ -329,7 +338,7 @@
                 <span>mc.suggest You should add a command that ...</span>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="command">
             <p class="com">mc.clear</p>
             <span class="desc">Clear your data. (Admin-only)</span>
@@ -392,13 +401,6 @@
               class="button"
             >
               discord.bots.gg
-            </a>
-            <a
-              href="https://bots.ondiscord.xyz/bots/743019909474418800"
-              target="_blank"
-              class="button"
-            >
-              bots.ondiscord.xyz
             </a>
           </div>
         </section>
