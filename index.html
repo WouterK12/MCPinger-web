@@ -483,22 +483,29 @@
 
         const loader = new THREE.GLTFLoader();
         let model = new THREE.Object3D();
-        loader.load("./files/model.glb", (object) => {
-          model = object.scene;
+        loader.load(
+          "./files/model.glb",
+          (object) => {
+            model = object.scene;
 
-          // enable shadows on mesh
-          model.traverse((child) => {
-            if (child.isMesh) {
-              child.castShadow = true;
-              child.receiveShadow = true;
-            }
-          });
+            // enable shadows on mesh
+            model.traverse((child) => {
+              if (child.isMesh) {
+                child.castShadow = true;
+                child.receiveShadow = true;
+              }
+            });
 
-          scene.add(model);
+            scene.add(model);
 
-          main.prepend(renderer.domElement);
-          logoImage.style.display = "none";
-        });
+            main.prepend(renderer.domElement);
+            logoImage.style.display = "none";
+          },
+          () => {},
+          (err) => {
+            if (err) return;
+          }
+        );
 
         // look at cursor
         var target = new THREE.Vector3(0, 0, 2000);
@@ -509,19 +516,24 @@
         var limit = 2;
         var halfX = window.innerWidth / limit;
         var halfY = window.innerHeight / limit;
-        var smoothing = 0.01;
+        var smoothing = 0.6;
 
         window.onmousemove = function () {
           mouseX = event.clientX - halfX;
           mouseY = event.clientY - halfY;
         };
 
+        var clock = new THREE.Clock();
+        var delta = 0;
+
         function animate() {
           requestAnimationFrame(animate);
 
+          delta = clock.getDelta();
+
           // update target position
-          target.x += (mouseX - target.x) * smoothing;
-          target.y += (-mouseY - target.y) * smoothing;
+          target.x += (mouseX - target.x) * smoothing * delta;
+          target.y += (-mouseY - target.y) * smoothing * delta;
           model.lookAt(target);
 
           renderer.render(scene, camera);
