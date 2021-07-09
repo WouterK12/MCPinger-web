@@ -69,8 +69,7 @@ main {
 main .logo {
   width: 300px;
   transform: translateY(7%);
-  animation-delay: 1.5s;
-  animation: hoverAnim 3s infinite;
+  animation: hoverAnim 3s 1.4s infinite;
 }
 @keyframes hoverAnim {
   0% {
